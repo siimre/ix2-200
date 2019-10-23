@@ -68,25 +68,23 @@ Then unmount the usb stick
 
 1. Plug the usb drive into iomega
 1. Make serial connection: <br>
-  ```sudo cu -l /dev/ttyUSB0 -s 115200```
+  ```sudo cu -l /dev/ttyUSB0 -s 115200``` <br>
 If line is busy, then change the rights: <br>
   ```sudo chmod 666 /dev/ttyUSB0```
-1. power on the device
-1. in u-boot promt start usb support <br>
+1. Power on the device
+1. In u-boot promt start usb support <br>
   ```usb start```
-1. make sure that your usb drive is detected <br>
-  ```usb storage```
-If its not detected, you can try again by running <br>
+1. Make sure that your usb drive is detected <br>
+  ```usb storage``` <br>
+If It's not detected, you can try again by running <br>
   ```reset```
 1. Make sure that you can list files on the usb drive <br>
   ```ext2ls usb 0:1 /```
-1. Load files and boot
-```
-ext2load usb 0:1 0x00800000 /uImage
-ext2load usb 0:1 0x01A00000 /uInitrd
-setenv bootargs console=ttyS0,115200
-bootm 0x00800000 0x01A00000
-```
+1. Load files and boot <br>
+  ```ext2load usb 0:1 0x00800000 /uImage``` <br>
+  ```ext2load usb 0:1 0x01A00000 /uInitrd``` <br>
+  ```setenv bootargs console=ttyS0,115200``` <br>
+  ```bootm 0x00800000 0x01A00000```
 
 # 6. Install debian like normal
 
