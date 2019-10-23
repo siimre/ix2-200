@@ -68,36 +68,18 @@ Then unmount the usb stick
 
 1. Plug the usb drive into iomega
 1. Make serial connection:
-```
-sudo cu -l /dev/ttyUSB0 -s 115200
-```
+```sudo cu -l /dev/ttyUSB0 -s 115200```
 If line is busy, then change the rights:
-```
-sudo chmod 666 /dev/ttyUSB0
-```
+```sudo chmod 666 /dev/ttyUSB0```
 1. power on the device
 1. in u-boot promt start usb support
-
-```
-usb start
-```
-
+```usb start```
 1. make sure that your usb drive is detected
-
-```
-usb storage
-```
-
+```usb storage```
 If its not detected, you can try again by running `reset`
-
 1. Make sure that you can list files on the usb drive
-
-```
-ext2ls usb 0:1 /
-```
-
+```ext2ls usb 0:1 /```
 1. Load files and boot
-
 ```
 ext2load usb 0:1 0x00800000 /uImage
 ext2load usb 0:1 0x01A00000 /uInitrd
