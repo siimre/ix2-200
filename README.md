@@ -67,7 +67,7 @@ Then unmount the usb stick
 # 5. Boot debian installer on iomega
 
 1. Plug the usb drive into iomega
-2. Make seral connection:
+1. Make serial connection:
 ```
 sudo cu -l /dev/ttyUSB0 -s 115200
 ```
@@ -75,7 +75,7 @@ If line is busy, then change the rights:
 ```
 sudo chmod 666 /dev/ttyUSB0
 ```
-3. power on the device
+1. power on the device
 1. in u-boot promt start usb support
 
 ```
@@ -90,13 +90,13 @@ usb storage
 
 If its not detected, you can try again by running `reset`
 
-5. Make sure that you can list files on the usb drive
+1. Make sure that you can list files on the usb drive
 
 ```
 ext2ls usb 0:1 /
 ```
 
-6. Load files and boot
+1. Load files and boot
 
 ```
 ext2load usb 0:1 0x00800000 /uImage
